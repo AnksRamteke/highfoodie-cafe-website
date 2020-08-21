@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+
+
+{% block title%} contact {% endblock title%}
+
+{% block body%}
+
+<!-- SINGLE SLIDE COROUSAL-->
+<div class="container my-4 ">
+  <img src="https://images.unsplash.com/photo-1485770958101-9dd7e4ea6d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80" class="d-block w-100" alt="...">
+  </div>
+  <h2 class="text-center">Contact Us...</h2>
+
+  <!-- FORM ADDED HERE-->
+<div class="container py-4">
+  <form method="post", action="/contact"> {% csrf_token %}
+    <div class="form-group">
+      <label for="name"> Name</label>
+      <input type="text" class="form-control", name ="name", placeholder="Enter your name "id="exampleInputEmail1" aria-describedby="emailHelp">
+
+    </div>
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control",name="email", placeholder="Enter your email address ",id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="form-group">
+    <label for="Phone No">Phone No</label>
+    <input type="text" class="form-control",name="phone no", placeholder="Enter mobile number", id="exampleInputPassword1">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+{% endblock body%}
