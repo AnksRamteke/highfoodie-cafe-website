@@ -32,4 +32,6 @@ def contact(request):
     return render(request, 'contact.html')
 
 def about(search):
-    return render(request, 'search.html')
+    allPosts = Post.object.all()
+    params = {'allPosts': allPosts}
+    return render(request, 'search.html',params)
