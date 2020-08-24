@@ -31,7 +31,8 @@ def contact(request):
             messages.success(request, 'Form is submitted successfully!.')
     return render(request, 'contact.html')
 
-def about(search):
-    allPosts = Post.object.all()
+def search(request):
+    query = request.GET['query']
+    allPosts = Post.objects.filter(title__icontains= query)
     params = {'allPosts': allPosts}
     return render(request, 'search.html',params)
