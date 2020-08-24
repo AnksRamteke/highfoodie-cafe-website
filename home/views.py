@@ -30,3 +30,6 @@ def contact(request):
             contact.save()
             messages.success(request, 'Form is submitted successfully!.')
     return render(request, 'contact.html')
+
+def about(search):
+    return render(request, 'sesarch.html')
