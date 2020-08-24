@@ -32,4 +32,4 @@ def contact(request):
     return render(request, 'contact.html')
 
 def about(search):
-    return render(request, 'sesarch.html')
+    return render(request, 'search.html')
