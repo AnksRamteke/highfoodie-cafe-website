@@ -16,11 +16,17 @@ def FoodItem(request):
     return render(request, 'FoodItem.html')
 
 def contact(request):
+    messages.error(request,'Welcome to the contact Page')
     if request.method =='post':
         name = request.POST.get('name')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
-        contact = Contact (name = name,email = email , phone = phone, date = datetime.today())
-        contact.save()
-        messages.success(request, 'Form is submitted successfully!.')
+        content = request.POST.get('content')
+        
+        if len(name)<2 or len(email)<3 or len(content)<4:
+            messege.error(request,'Please fill the form correctly')
+         else:
+            contact = Contact (name = name,email = email , phone = phone, date = datetime.today())
+            contact.save()
+            messages.success(request, 'Form is submitted successfully!.')
     return render(request, 'contact.html')
